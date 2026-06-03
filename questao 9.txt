@@ -1,0 +1,64 @@
+/**
+* This function returns all subsets (power set) of a given set A.
+* It converts the set into an array so we can access elements by index.
+* Then it uses bit manipulation to generate all possible combinations.
+*/
+function getSubSets(A) {
+   const arr = Array.from(A);
+   const n = arr.length;
+   const result = [];
+
+   const total = 1 << n;
+
+   for (let i = 0; i < total; i++) {
+       const subset = new Set();
+
+       for (let j = 0; j < n; j++) {
+           if (i & (1 << j)) {
+               subset.add(arr[j]);
+           }
+       }
+
+       result.push(subset);
+   }
+
+   return result;
+}
+
+// Teste
+const A = new Set([1, 2, 3]);
+const subsets = getSubSets(A);
+
+console.log(subsets); 
+/**
+* This function returns all subsets (power set) of a given set A.
+* It converts the set into an array so we can access elements by index.
+* Then it uses bit manipulation to generate all possible combinations.
+*/
+function getSubSets(A) {
+   const arr = Array.from(A);
+   const n = arr.length;
+   const result = [];
+
+   const total = 1 << n;
+
+   for (let i = 0; i < total; i++) {
+       const subset = new Set();
+
+       for (let j = 0; j < n; j++) {
+           if (i & (1 << j)) {
+               subset.add(arr[j]);
+           }
+       }
+
+       result.push(subset);
+   }
+
+   return result;
+}
+
+// Teste
+const A = new Set([1, 2, 3]);
+const subsets = getSubSets(A);
+
+console.log(subsets); 
